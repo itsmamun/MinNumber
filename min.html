@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Minimun Number</title>
+</head>
+<body>
+
+   
+    <label for="input-numbers">Enter numbers separated by commas:</label>
+    <input type="text" id="input-numbers">
+    <button id="calculate-btn">Calculate Minimum</button>
+    <p>The minimum number is: <span id="result"></span></p>
+
+    <script>
+      const calculateBtn = document.getElementById('calculate-btn');
+      calculateBtn.addEventListener('click', () => {
+        const inputNumbers = document.getElementById('input-numbers').value;
+        const numbersArray = inputNumbers.split(',').map(Number);
+        const minNumber = Math.min(...numbersArray);
+        const resultElement = document.getElementById('result');
+        resultElement.textContent = minNumber;
+      });
+    </script>
+ 
+
+
+
+</body>
+</html>
